@@ -28,8 +28,10 @@
     
     body {
       max-width: 605px;    /* équiv. ~453.6pt du fichier Google Docs */
-      padding: 94px;       /* équiv. ~70.8pt (marges visuelles gauche/droite) */
-      margin: 0;           /* IMPORTANT : pas de centrage */
+      padding-top: 94px;
+      padding-bottom: 94px;
+      padding-left: 94px;   /* marge gauche conservée */
+      padding-right: 10px;  /* marge droite MINIMALE */      margin: 0;           /* IMPORTANT : pas de centrage */
       background-color: #ffffff;
       font-size: 12pt;
       color: #000;
@@ -108,19 +110,23 @@
       margin-bottom: 12px;
     }
 
-    /* Réseaux sociaux */
+    /* Conteneur des logos sociaux */
     .social {
       display: flex;
       gap: 6px;
       align-items: center;
     }
-
+    
+    /* Logos sociaux : taille STRICTE et identique */
     .social img {
       width: 22px;
       height: 22px;
+      min-width: 22px;
+      min-height: 22px;
       object-fit: contain;
-      display: inline-block;
+      display: block;
     }
+
 
     /* ===============================
        SIGNATURE TEXT
