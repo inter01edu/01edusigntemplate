@@ -21,14 +21,20 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      margin: 0;           /* pas de marge par défaut du navigateur */
+      padding: 0;
+    }
+    
     body {
-      max-width: 700px;
-      margin: 0;
-      padding:  60px;
+      max-width: 605px;    /* équiv. ~453.6pt du fichier Google Docs */
+      padding: 94px;       /* équiv. ~70.8pt (marges visuelles gauche/droite) */
+      margin: 0;           /* IMPORTANT : pas de centrage */
       background-color: #ffffff;
       font-size: 12pt;
       color: #000;
     }
+
 
     /* ===============================
        TEXT
