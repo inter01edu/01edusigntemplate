@@ -1,275 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>01Edu Signature Template</title>
+<!doctype html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
 
-  <!-- Google Fonts : Montserrat -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+    <style>
+      /* Logo principal */
+      .logo01edu img:first-child {
+        width: 100px;
+        max-width: 100px;
+        height: auto;
+        margin-bottom: 0px;
+        display: inline-block;
+      }
 
-  <style>
-    /* ===============================
-       GLOBAL RESET & FONT
-       =============================== */
-    * {
-      font-family: "Montserrat", sans-serif !important;
-      box-sizing: border-box;
-    }
+      .logo01edu {
+        padding-right: 6px;
+        text-align: center;
+      }
 
-    html, body {
-      margin: 0;           /* pas de marge par défaut du navigateur */
-      padding: 0;
-    }
-    
-    body {
-    /*  max-width: 605px;    équiv. ~453.6pt du fichier Google Docs */
-      padding-top: 94px;
-      padding-bottom: 94px;
-      padding-left: 94px;   /* marge gauche conservée */
-      padding-right: 10px;  /* marge droite MINIMALE */      margin: 0;           /* IMPORTANT : pas de centrage */
-      background-color: #ffffff;
-      font-size: 12pt;
-      color: #000;
-    }
+      /* Logos sociaux : taille STRICTE et identique */
+      .social img {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        min-height: 22px;
+        object-fit: contain;
+        display: block;
+      }
 
+      .social table {
+        width: auto !important;
+        margin: 0 auto !important;
+        border-collapse: collapse;
+      }
 
-    /* ===============================
-       TEXT
-       =============================== */
-    h1 {
-      text-align: center;
-      font-size: 36pt;
-      font-weight: 700;
-      margin-bottom: 30px;
-    }
+      .social td {
+        padding: 0 2px;
+        width: 22px;
+      }
 
-    h2 {
-      font-size: 15pt;
-      font-weight: 700;
-      margin-top: 30px;
-      margin-bottom: 10px;
-    }
+      .social a, .social img {
+        display: block;
+      }
+    </style>
+  </head>
 
-    p {
-      margin: 0;
-      line-height: 1.2;
-    }
+  <body>
+    <script>
+      fetch('https://opensheet.elk.sh/1maVoCpxQUmelT_wpZzTZERPzW4y20zGeoLtQuxbFvXQ/1')
+        .then(r => r.json())
+        .then(users => users.filter(Boolean).map(({ firstname, lastname, title, email, mobile }) => [
+          `<div id="${email.split('@')[0]}" style="display: flex; flex-direction: row; margin: 10px 0; user-select: none">`,
+            '<div style="background: #eee; flex-grow: 1"></div>',
+            `<a style="text-decoration: none; color: grey" href="#${email.split('@')[0]}">🔗</a>`,
+          '</div>',
 
-    ol {
-      padding-left: 20px;
-    }
+          '<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-collapse: collapse; font-family: sans-serif;">',
+            '<tr>',
 
-    li {
-      margin-bottom: 6px;
-    }
+              '<td style="width: 100px;">',
+                '<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; text-align: center;">',
 
-    a {
-      color: #0063f9;
-      text-decoration: underline;
-    }
+                  '<tr>',
+                    '<td class="logo01edu">',
+                      '<img style="vertical-align: middle;" src="./images/logo01edu.svg" alt="01Edu Logo" />',
+                    '</td>',
+                  '</tr>',
 
-    /* ===============================
-       IMAGE CONSTRAINTS (IMPORTANT)
-       =============================== */
+                  '<tr>',
+                    '<td class="social">',
+                      '<table cellpadding="0" cellspacing="0" border="0" style="width: auto; border-collapse: collapse; margin: 0 auto;">',
+                        '<tr>',
+                          '<td>',
+                            '<a href="https://www.linkedin.com/company/01edu/">',
+                              '<img src="./images/linkedin.svg" alt="LinkedIn" />',
+                            '</a>',
+                          '</td>',
+                          '<td>',
+                            '<a href="https://www.youtube.com/@01Edu_ai">',
+                              '<img src="./images/youtube.svg" alt="youtube" />',
+                            '</a>',
+                          '</td>',
+                          '<td>',
+                            '<a href="https://www.instagram.com/01edu_ai/">',
+                              '<img src="./images/instagram.svg" alt="Instagram" />',
+                            '</a>',
+                          '</td>',
+                        '</tr>',
+                      '</table>',
+                    '</td>',
+                  '</tr>',
 
-    /* Sécurité globale : aucune image ne déborde */
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+                '</table>',
+              '</td>',
 
-    /* ===============================
-       SIGNATURE LAYOUT
-       =============================== */
-    .signature {
-      border-collapse: collapse;
-      margin-top: 15px;
-    }
+              '<td style="width: 3px; background: #0063f9;"></td>',
+              '<td style="width: 3px;"></td>',
 
-    .logo {
-      vertical-align: middle;
-      padding-right: 15px;
-    }
+              '<td>',
+                '<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-collapse: collapse;">',
+                  '<tr style="height: 20px;"><td style="font-size: 12px;">Recode Our World With</td></tr>',
+                  `<tr style="height: 20px;"><td style="font-weight: bold; color: #0063f9;">${firstname} ${lastname}</td></tr>`,
+                  `<tr style="height: 20px;"><td style="font-weight: bold; font-size: 12px;">${title}</td></tr>`,
+                  mobile ? `<tr style="height: 20px;"><td style="font-size: 12px;">Mobile: ${mobile}</td></tr>` : '',
+                  '<tr style="height: 20px;"><td style="font-size: 12px;"><a style="color: #0063f9;" href="https://www.01edu.ai">www.01edu.ai</a></td></tr>',
+                '</table>',
+              '</td>',
 
-    .details {
-      border-left: 2px solid #0063f9;
-      padding-left: 15px;
-    }
+            '</tr>',
 
-    /* Logo principal */
-    .logo img:first-child {
-      width: 100px;
-      max-width: 100px;
-      height: auto;
-      margin-bottom: 12px;
-    }
+            '<tr>',
+              '<td colspan="4" style="padding-top: 20px; color: #666; font-size: 12px">',
+                'Any electronic messages sent outside your regular working hours do not require a response until you return to your normal working hours.',
+              '</td>',
+            '</tr>',
 
-    /* Conteneur des logos sociaux */
-    .social {
-      display: flex;
-      gap: 6px;
-      align-items: center;
-    }
-    
-    /* Logos sociaux : taille STRICTE et identique */
-    .social img {
-      width: 22px;
-      height: 22px;
-      min-width: 22px;
-      min-height: 22px;
-      object-fit: contain;
-      display: block;
-    }
-
-    /* Correction spécifique LinkedIn */
-    .social img[alt="LinkedIn"] {
-      width: 22px;
-      height: 22px;
-    }
-
-
-    
-    /* ===============================
-       SIGNATURE TEXT
-       =============================== */
-    .name {
-      font-size: 13pt;
-      font-weight: 600;
-      color: #0063f9;
-    }
-
-    .job {
-      font-size: 10pt;
-      font-weight: 500;
-    }
-
-    .link {
-      font-size: 11pt;
-      font-weight: 400;
-    }
-
-    .disclaimer {
-      margin-top: 12px;
-      font-size: 10pt;
-      color: #666;
-    }
-
-    .separator {
-      text-align: center;
-      margin: 25px 0;
-      color: #666;
-    }
-  </style>
-</head>
-
-<body>
-
-  <h1>01Edu Signature Template</h1>
-
-  <h2>Instructions</h2>
-  <ol>
-    <li>Find your signature (Ctrl + F → your name)</li>
-    <li>Select the entire signature (including images)</li>
-    <li>
-      Paste it into
-      <a href="https://mail.google.com/mail/u/0/#settings/general">
-        your email settings
-      </a>
-    </li>
-    <li>Update the details if needed</li>
-    <li>
-      Watch the setup video
-      <a href="https://drive.google.com/drive/folders/1sQ2RlsqqSzxT0prgN2nu1Z5GXUiRcdQ6">
-        in this folder
-      </a>
-    </li>
-  </ol>
-
-  <h2>Template – Without phone number</h2>
-
-  <table class="signature">
-    <tr>
-      <td class="logo">
-        <!-- Logo principal -->
-        <img src="./images/logo01edu.svg" alt="01Edu Logo">
-        
-        <div class="social">
-           <img src="./images/linkedin.svg" alt="LinkedIn">
-           <img src="./images/youtube.svg" alt="youtube">
-           <img src="./images/instagram.svg" alt="Instagram">
-        </div>
-
-      </td>
-  
-      <td class="details">
-        <p>Recode Our World With</p>
-        <p class="name">First_name Last_name</p>
-        <p class="job">Job Title</p>
-        <p class="link">
-          <a href="https://www.01edu.ai">www.01edu.ai</a>
-        </p>
-      </td>
-    </tr>
-  </table>
-
-
-  <p class="disclaimer">
-    Any electronic messages sent outside your regular working hours do not
-    require a response until you return to your normal working hours.
-  </p>
-
-  <div class="separator">— — —</div>
-
-  <h2>Template – With phone number</h2>
-
-  <table class="signature">
-    <tr>
-      <td class="logo">
-        <!-- Logo principal -->
-        <img src="./images/logo01edu.svg" alt="01Edu Logo">
-        
-        <div class="social">
-          <img src="./images/linkedin.svg" alt="LinkedIn">
-          <img src="./images/youtube.svg" alt="youtube">
-          <img src="./images/instagram.svg" alt="Instagram">
-        </div>
-
-      </td>
-  
-      <td class="details">
-        <p>Recode Our World With</p>
-        <p class="name">First_name Last_name</p>
-        <p class="job">Job Title</p>
-        <p class="job">Mobile: +xx x xx xx xx xx</p>
-        <p class="link">
-          <a href="https://www.01edu.ai">www.01edu.ai</a>
-        </p>
-      </td>
-    </tr>
-  </table>
-
-
-
-  <p class="disclaimer">
-    Any electronic messages sent outside your regular working hours do not
-    require a response until you return to your normal working hours.
-  </p>
-
-  <div class="separator">— — —</div>
-
-  <p>
-    <strong>
-      <a href="http://inter01edu.github.io/01edusign">
-        View all signatures
-      </a>
-    </strong>
-  </p>
-
-</body>
+          '</table>'
+        ].join('')))
+        .then(html => document.body.innerHTML += html.join('<br>\n'))
+    </script>
+  </body>
 </html>
